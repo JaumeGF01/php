@@ -7,7 +7,7 @@
     <h3>Intercambiar valores</h3>
     <hr>
     <?php
-    function intercambia($a, $b){
+    function intercambia(&$a, &$b){
         echo "El valor de a era: $a";
         echo "<br>El valor de b era: $b";
         $c = $a;
