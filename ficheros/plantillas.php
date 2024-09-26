@@ -13,15 +13,12 @@
         $claves = array_combine($cabecera, $valor);
         $new[] = $claves;
     }
-    echo "<table>";
-    foreach ($new as $list) {
-        
-        if ($claves["Equipo"] == "Atlético de Madrid") {
-            echo "<tr>";
-            echo "<td>{$list["Dorsal"]} {$list["Nombre"]} {$list["Apellidos"]} {$list["Posicion"]} {$list["Equipo"]}</td>";
-            echo "</tr>";
-        }
-    }echo "</table>";
-    
+    // $atleticoJugadores = array_filter($datos, function($jugador)){
+    //     return $jugador["Equipo"] === "Atlético de Madrid";
+    // }
+    $atletiOrden[] = usort($new, function($a,$b){
+        return $a["Dorsal"] <=> $b["Dorsal"];
+    });
+    include "plantillas.view.php";
 
 ?>
