@@ -8,9 +8,6 @@
 <body>
     <h3>Analizador Word Count</h3>
     <hr>
-    <?php
-        include "analizadorWC.php";
-        echo analizadorWC("Hola mundo");
-    ?>
+    <?php echo analizadorWC("Hola mundo");?>
 </body>
 </html>

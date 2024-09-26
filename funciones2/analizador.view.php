@@ -8,9 +8,6 @@
 <body>
     <h3>Analizador</h3>
     <hr>
-    <?php
-        include "analizador.php";
-        echo analizador("Hola mundo");
-    ?>
+    <?php echo analizador("Hola mundo")?>
 </body>
 </html>

@@ -10,4 +10,5 @@
             echo "<br>";
         }
     }
+    include "analizador.view.php";
 ?>

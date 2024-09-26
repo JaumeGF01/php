@@ -5,4 +5,5 @@
             echo "true";
         }else echo "false";
     }
+    include "palindromo.view.php";
 ?>

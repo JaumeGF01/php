@@ -10,4 +10,5 @@
             echo "$palabra $letrasPalabra<br>";
         }
     }
+    include "analizadorWC.view.php";
 ?>

@@ -13,4 +13,5 @@
             }
         }return $fraseCani;
     }
+    include "canI.view.php";
 ?>

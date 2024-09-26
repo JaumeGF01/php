@@ -9,4 +9,5 @@
         }
         return $fraseNueva;
     }
+    include "fraseImpares.php";
 ?>

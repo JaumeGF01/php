@@ -8,9 +8,6 @@
 <body>
     <h3>Cadena en cAnI</h3>
     <hr>
-    <?php
-        include "canI.php";
-        echo canI("Hola mundo");
-    ?>
+    <?php echo canI("Hola mundo");?>
 </body>
 </html>

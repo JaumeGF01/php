@@ -8,9 +8,6 @@
 <body>
     <h3>Frase de letras impares</h3>
     <hr>
-    <?php
-        include "fraseImpares.php";
-        echo fraseImpares("Hola mundo");
-    ?>
+    <?php echo fraseImpares("Hola mundo");?>
 </body>
 </html>

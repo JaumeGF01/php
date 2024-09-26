@@ -8,9 +8,6 @@
 <body>
     <h3>Palindromo</h3>
     <hr>
-    <?php
-        include "palindromo.php";
-        echo palindromo("Hola mundo");
-    ?>
+    <?php echo palindromo("Hola mundo");?>
 </body>
 </html>
