@@ -6,7 +6,7 @@
         $seleccion_menu = $_POST['menu'];
     }
     $stringAficiones = implode(", ", $seleccion_afic);
-    $menuFav = implode(", ", $seleccion_menu);
+    $menuFav = implode(", ", $seleccion_menu)
     include "header.php";
 ?>
 
