@@ -75,11 +75,6 @@
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
         .btn-primary:hover {
             background-color: #0056b3;
         }

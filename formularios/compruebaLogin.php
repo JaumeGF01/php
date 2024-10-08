@@ -4,17 +4,13 @@
     
     $arrayUsuarios = [
             "nombre" => "pipo",
-            "contrasena" => "pirulinPimpero20241003"   
+            "contrasena" => "a"   
     ];
-    if (!empty($passwd) && !empty($nombre)) {
-        if ($arrayUsuarios["nombre"] == $nombre && $passwd == $arrayUsuarios["contrasena"]){
-            include "ok.php";
-        }else {
-            include "ko.php";
-            header("Refresh:2; url=login.php");
-        }
+    
+    if ($arrayUsuarios["nombre"] == $nombre && $passwd == $arrayUsuarios["contrasena"]){
+        include "ok.php";
     }else{
-        echo "No has escrito nada";
+        include "ko.php";
         header("Refresh:2; url=login.php");
     }
     
