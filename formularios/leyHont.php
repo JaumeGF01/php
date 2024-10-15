@@ -25,8 +25,6 @@
             echo "<tr>";
             for ($j=0; $j < count($votos); $j++) {
                 $votoEsc = round($votos[$j]/$i,1);
-                
-                echo "<tr><th>Partido $j</th>";
                 echo "<td>{$votoEsc}</td></tr>";
             }
             echo "</tr>";
