@@ -1,35 +1,76 @@
 <?php
-    // function hont($numPartidos,$votos,$escaños){
-    //     echo "<table border='1'>";
-        
-    //     for ($i=1; $i <= $numPartidos; $i++) {
-    //         echo "<tr>";
-    //         echo "<th>Partido $i</th> ";
-    //         for ($x=0; $x < count($votos); $x++) {
-    //             echo "<tr>";
+    function hont($partidos,$escanos,$votos){
+        $num_votos = [];
+        $cont_votos = [];
+        $cont = [];
+        for($i = 1; $i <= $escanos; $i++){
+        }
+        for($i = 0;$i < count($votos); $i++){
+            for($j = 1; $j <= $escanos;$j++){
+                $new_num = round($votos[$i]/$j,1);
+                $num_votos[] = $new_num;
+                $cont[] = $new_num;
                 
-    //             echo "<td>Escaño $x</td>";
-    //             $nuevos_votos = round($votos[$x]/$i,1);
-    //             echo "<td>$nuevos_votos</td>";
-    //             echo "<tr>";
-    //         }echo "</tr>";
-    //     }
-    //     echo "</table>";
-    // }
-    $votos = [500000,300000,150000,50000];
-    // hont(4, $votos, 7);
+            }
+            $cont_votos[] = $num_votos;
+            $num_votos = [];
+            
 
-    function hont2($votos){
-        echo "<table border='1'>";
-        for ($i=1; $i < 8; $i++) {
+        }
+        $votos_fin = array_combine($partidos,$cont_votos);
+
+        rsort($cont);
+        $numeros_may = array_slice($cont,0,$escanos);
+        $votos = [500000, 300000, 150000, 50000];
+        $escanos = 7;
+        $partidos = ["Partido A", "Partido B", "Partido C", "Partido D"];
+
+        // Calcular los 7 números más grandes
+        $numeros_may = [];
+        for($i = 0; $i < count($votos); $i++) {
+            for($j = 1; $j <= $escanos; $j++) {
+                $numeros_may[] = round($votos[$i] / $j, 1);
+            }
+        }
+        rsort($numeros_may);
+        $numeros_may = array_slice($numeros_may, 0, 7);
+
+        // Crear la tabla transpuesta
+        echo "<table>";
+        
+        // Primera fila: los partidos
+        echo "<tr><th>Escaños</th>";
+        for($i = 0; $i < count($partidos); $i++) {
+            echo "<th>{$partidos[$i]}</th>";
+        }
+        echo "</tr>";
+
+        // Filas de escaños
+        for($j = 1; $j <= $escanos; $j++) {
             echo "<tr>";
-            for ($j=0; $j < count($votos); $j++) {
-                $votoEsc = round($votos[$j]/$i,1);
-                echo "<td>{$votoEsc}</td></tr>";
+            echo "<td>Escaño $j</td>";
+            for($i = 0; $i < count($votos); $i++) {
+                $new_num = round($votos[$i] / $j, 1);
+                if (in_array($new_num, $numeros_may)) {
+                    echo "<td style='background-color: yellow;'>{$new_num}</td>";
+                    $key = array_search($new_num, $numeros_may);
+                    unset($numeros_may[$key]);
+                } else {
+                    echo "<td>{$new_num}</td>";
+                }
             }
             echo "</tr>";
         }
-        echo "</table>";
+        
+        echo "</table>";;
+
     }
-    echo (hont2($votos));
+
+
+
+    $votos = [500000,300000,150000,50000];
+    $escanos = 7;
+    $partidos = ["partido a","partido b","partido c","partido d"];
+    echo hont($partidos,$escanos,$votos);
+
 ?>
