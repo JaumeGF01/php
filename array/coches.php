@@ -2,6 +2,13 @@
 <html lang="es">
 <head>
     <title>Array Coches</title>
+    <style>
+        table,tr,td,th{
+            border-collapse:collapse;
+            border: 1px solid black;
+            padding: 3px;
+        }
+    </style>
 </head>
 <body>
     <h3>Array Coches</h3>
@@ -18,9 +25,21 @@
         
         echo "<h3>Ordenado por matricula</h3><hr>";
         ksort($matriculas);
+        echo "<table>";
+        echo "<tr>
+                <th>Matricula</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Puertas</th>
+              </tr>";
 
         foreach ($matriculas as $coche => $dato) {
-            echo $coche." Marca: ".$dato[0]." Modelo: ".$dato[1]." Puertas: ".$dato[2]."<br>";
+            echo "<tr>";
+            echo "<td>{$coche}</td>";
+            echo "<td>{$dato['0']}</td>";
+            echo "<td>{$dato['1']}</td>";
+            echo "<td>{$dato['2']}</td>";
+            echo "</tr>";
         }
 
     ?>
