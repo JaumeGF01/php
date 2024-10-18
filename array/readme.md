@@ -25,6 +25,3 @@ Mediante un array bidimensional, almacena el nombre, altura y email de 5 persona
 Aquí pondremos matrículas de coches. La segunda dimensión será numérica. En cada casilla guardaremos la marca, modelo y número de puertas del coche en cuestión. Por ejemplo, el coche con matrícula “111BCD” puede ser un “Ford” (casilla 0), modelo “Focus” (casilla 1) de 5 puertas (casilla 2). Rellena el array con al menos 3 o 4 coches, y después utiliza las estructuras adecuadas para recorrerlo mostrando los datos de los coches ordenados por matrícula.
 
 ![image](https://github.com/user-attachments/assets/bfccc19d-f3b3-4b15-86ec-64036a4fd5dc)
-
-
----
