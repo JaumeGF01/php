@@ -12,14 +12,24 @@
             $randNum = rand(0,99);
             if (in_array($randNum, $arrayNums)) {
                 $i--;
-            }else $arrayNums[$i] = $randNum;
-        } print_r($arrayNums);
+            }else{
+               $arrayNums[$i] = $randNum;
+               if ($i == 49) {
+                echo $arrayNums[$i];
+               }else echo $arrayNums[$i]." - ";
+               
+            } 
+        }
         
         echo "<h3>Ordenar Array 0-99</h3>";
         echo "<hr>";
 
         sort($arrayNums);
-        print_r($arrayNums);
+        for ($i=0; $i < count($arrayNums); $i++) {
+            if ($i == 49) {
+                echo $arrayNums[$i];
+            }else echo $arrayNums[$i]." - ";
+        }
 
         echo "<h3>Mayor, menor y media</h3>";
         echo "<hr>";

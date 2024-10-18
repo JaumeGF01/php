@@ -15,9 +15,14 @@
         ];
         print_r($matriculas);
 
-        echo "<h3>Ordenado por matricula</h3>";
+        
+        echo "<h3>Ordenado por matricula</h3><hr>";
         ksort($matriculas);
-        print_r($matriculas);
+
+        foreach ($matriculas as $coche => $dato) {
+            echo $coche." Marca: ".$dato[0]." Modelo: ".$dato[1]." Puertas: ".$dato[2]."<br>";
+        }
+
     ?>
 </body>
 </html>
