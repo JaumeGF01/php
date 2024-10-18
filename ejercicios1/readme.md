@@ -39,5 +39,3 @@ Modifica el ejercicio anterior añadiendo una tercera nota $nota3 , y determinan
 Utiliza una estructura for para contar los números del 1 al 100 (separados por comas), y luego una estructura while para contar los números del 10 al 0 (una cuenta atrás, separada por guiones).
 
 ![image](https://github.com/user-attachments/assets/f62e7e4e-2c1a-4113-8855-22aa2114584f)
-
----
