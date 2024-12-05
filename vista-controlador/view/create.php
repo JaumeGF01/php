@@ -3,8 +3,8 @@
         <label for="titulo">Titulo:</label>
         <input type="text" name="titulo" required>
         <br>
-        <label for="descripcion">Descripcion:</label>
-        <input type="text" name="descripcion" required>
+        <label for="sinopsis">Sinopsis:</label>
+        <input type="text" name="sinopsis" required>
         <br>
         <button type="submit">Guardar</button>
     </form>

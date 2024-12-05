@@ -45,12 +45,12 @@ class libro{
         }
     }
 
-    public function edit($id, $titulo, $descripcion){
+    public function edit($id, $title, $sinopsis){
         try{
-            $editar = $this->pdo->prepare("UPDATE libros SET titulo =:titulo, descripcion =:descripcion WHERE id =:id");
+            $editar = $this->pdo->prepare("UPDATE libros SET title =:title, sinopsis =:sinopsis WHERE id =:id");
             $editar->bindParam(':id', $id);
-            $editar->bindParam(':titulo', $titulo);
-            $editar->bindParam(':descripcion', $descripcion);
+            $editar->bindParam(':title', $title);
+            $editar->bindParam(':sinopsis', $sinopsis);
             $editar->execute();
             return true;
         }
@@ -59,12 +59,12 @@ class libro{
         }
     }
 
-    public function save($titulo, $descripcion, $creacion){
+    public function save($title, $sinopsis, $created_at){
         try{
-            $registro = $this->pdo->prepare("INSERT INTO libros(titulo, descripcion, creacion) VALUES(:titulo, :descripcion, :creacion)");
-            $registro->bindParam(':descripcion', $descripcion);
-            $registro->bindParam(':titulo', $titulo);
-            $registro->bindParam(':creacion'  , $creacion);
+            $registro = $this->pdo->prepare("INSERT INTO libros(title, sinopsis, created_at) VALUES(:title, :sinopsis, :created_at)");
+            $registro->bindParam(':sinopsis', $sinopsis);
+            $registro->bindParam(':title', $title);
+            $registro->bindParam(':created_at'  , $created_at);
             return $registro->execute();
         }
         catch(PDOException $e){
@@ -72,12 +72,12 @@ class libro{
         }
     }
 
-    public function update($id, $titulo, $descripcion){
-        $consulta = "UPDATE libros SET titulo =:titulo, descripcion =:descripcion WHERE id =:id";
+    public function update($id, $title, $sinopsis){
+        $consulta = "UPDATE libros SET title =:title, sinopsis =:sinopsis WHERE id =:id";
         $registro = $this->pdo->prepare($consulta);
         $registro->bindParam(':id', $id);
-        $registro->bindParam(':titulo', $titulo);
-        $registro->bindParam(':descripcion', $descripcion);
+        $registro->bindParam(':title', $title);
+        $registro->bindParam(':sinopsis', $sinopsis);
         return $registro->execute();
     }
 }

@@ -1,16 +1,16 @@
 <?php
-require 'config/userConexion.php';
+require 'config/user-conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usu = $_POST['usuario'];
-    $pass = $_POST['pass'];
+    $password = $_POST['password'];
 
     if (!empty($usu) && !empty($pass)) {
-        $sql = "INSERT INTO usuarios (usuario, pass) VALUES (:usuario, :pass)";
+        $sql = "INSERT INTO usuarios (usuario, password) VALUES (:usuario, :password)";
         $sentencia = $conexion->prepare($sql);
         $isOk = $sentencia->execute([
             "usuario" => $usu,
-            "pass" => password_hash($pass, PASSWORD_DEFAULT)
+            "password" => password_hash($password, PASSWORD_DEFAULT)
         ]);
 
         if ($isOk) {
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <form method="POST">
     <input type="text" name="usuario" placeholder="Nombre de usuario" required>
-    <input type="pass" name="pass" placeholder="Contraseña" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
     <button type="submit">Registrar</button>
 </form>
 <a href="login.php">Iniciar sesión</a>

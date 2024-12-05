@@ -1,6 +1,6 @@
 <?php
     
-    require_once "controlador/libroControl.php";
+    require_once "controller/control-libro.php";
     $index = new libroControl;
     $action = $_GET['action'] ?? null;
     $id = $_GET['id'] ?? null;

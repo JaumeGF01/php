@@ -1,5 +1,5 @@
 <?php
-require_once "modelo/libroModelo.php";
+require_once "model/modelo-libro.php";
 
 class libroControl{
     private $libromodelo;
@@ -10,39 +10,39 @@ class libroControl{
 
     public function indice(){
         $libros = $this->libromodelo->getAll();
-        require "vista/listar.php";
+        require "view/listar.php";
     }
 
     public function create(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $titulo = $_POST['titulo'];
-            $descripcion = $_POST['descripcion'];
-            $creacion = $_POST['creacion'];
-            $this->libromodelo->save($titulo, $descripcion, $creacion);
-            header("Location: index.php");
+            $title = $_POST['title'];
+            $sinopsis = $_POST['sinopsis'];
+            $created_at = $_POST['created_at'];
+            $this->libromodelo->save($title, $sinopsis, $created_at);
+            header("Location: ../index.php");
         }
         else{
-            require "vista/crear.php";
+            require "view/crear.php";
         }
     }
 
     public function edit($id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $titulo = $_POST['titulo'];
-            $descripcion = $_POST['descripcion'];
-            $creacion = $_POST['creacion'];
-            $this->libromodelo->update($id, $titulo, $descripcion);
-            header("Location: index.php");
+            $title = $_POST['title'];
+            $sinopsis = $_POST['sinopsis'];
+            $created_at = $_POST['created_at'];
+            $this->libromodelo->update($id, $title, $sinopsis);
+            header("Location: ../index.php");
         }
         else{
             $libro = $this->libromodelo->getById($id);
-            require "vista/editar.php";
+            require "view/editar.php";
         }
     }
 
     public function delete($id){
         $this->libromodelo->delete($id);
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
 }
 ?>

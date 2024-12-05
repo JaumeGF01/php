@@ -10,7 +10,7 @@
         {
             $this->pdo="";
             $this->host="localhost";  
-            $this->nombreDB="videojuegos";
+            $this->nombreDB="libros";
             $this->user="root";
             $this->pass="";
         }

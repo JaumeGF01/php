@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-require 'config/userConexion.php';
+require 'config/user-conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usu = $_POST['login'];
