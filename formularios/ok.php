@@ -1,1 +1,1 @@
-<?="El usuario introducido es correcto"?>
+<?="El usuario y contraseña introducida es correcta"?>

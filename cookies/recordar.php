@@ -1,14 +1,12 @@
-<?php
-    $recordar = $_POST['recordar'];
+<?php 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $nombre = $_POST['nombre'];
+        $password = $_POST['passwd'];
 
-    $nombre = $_POST['nombre'];
-    $contr = $_POST['passwd']; 
-    
-    if (isset($recordar)) {
-        setcookie("nombre", $nombre,time()+1000);
-        setcookie("contr", $contr,time()+1000);
-
+        if (isset($_POST['recordar'])){
+            setcookie('usuario', $nombre , time()+3600);  
+        }
     }
-    echo "Bienvenido ".$nombre;
-    
+    print_r($_COOKIE);
+    echo "Bienvenido " . $_COOKIE['usuario'];        
 ?>

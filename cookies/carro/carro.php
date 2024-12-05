@@ -1,20 +1,39 @@
 <?php
-    echo "
-        <ul style='list-style-type:none;'>
-            <li><a id='1' href='#'>Zapatillas Nike (60€)</a></li>
-            <li><a id='2' href='#'>Sudadera Domyos (15€)</a></li>
-            <li><a id='3' href='#'>Pala de pádel Vairo (50€)</a></li>
-            <li><a id='4' href='#'>Pelota de baloncesto Molten (20€)</a></li>
-        </ul>
-        ";
+session_start();
 
+$articulos = [
+    ["id" => 1, "nombre" => "Zapatillas Nike", "precio" => 60],
+    ["id" => 2, "nombre" => "Sudadera Domyos", "precio" => 15],
+    ["id" => 3, "nombre" => "Pala de pádel Vairo", "precio" => 50],
+    ["id" => 4, "nombre" => "Pelota de baloncesto Molten", "precio" => 20]
+];
+
+if (!isset($_SESSION['carro'])) {
+    $_SESSION['carro'] = [];
+}
+
+if (isset($_GET['id'])) {
+    $idArticulo = $_GET['id'];
+    foreach ($articulos as $articulo) {
+        if ($articulo['id'] == $idArticulo) {
+            $_SESSION['carro'][] = $articulo;
+            break;
+        }
+    }
+}
+
+$precioTotal = 0;
+if (isset($_SESSION['carro'])) {
+    foreach ($_SESSION['carro'] as $precioArt) {
+        $precioTotal += $precioArt['precio'];
+    }
+}
+
+if (isset($_GET['vaciar']) && $_GET['vaciar'] == 'true') {
+    unset($_SESSION['carro']);
+    session_destroy();
     $precioTotal = 0;
-    $articulos = [
-        ["id" => 1, "nombre" => "Zapatillas Nike", "precio" => 60],
-        ["id" => 2, "nombre" => "Sudadera Domyos", "precio" => 15],
-        ["id" => 3, "nombre" => "Pala de pádel Vairo", "precio" => 50],
-        ["id" => 4, "nombre" => "Pelota de baloncesto Molten", "precio" => 20]
-    ];
-    
-    echo "Precio total: ". $precioTotal;
+}
+
+include('carro.view.php');
 ?>

@@ -38,8 +38,8 @@
             print "DNI: " . $this -> dni . "-" . "Nombre: " . $this -> nombre . "-" . "Email: " . $this -> email;
         }
     }
-    // $persona1 = new Persona("03156166Z", "jaume", "jaugarfra@alu.edu.gva.es");
-    // echo $persona1 -> mostrar();
+    $persona1 = new Persona("03156166Z", "jaume", "jaugarfra@alu.edu.gva.es");
+    echo $persona1 -> mostrar();
    
     class Estudiante extends Persona{
         private $numExpediente;
