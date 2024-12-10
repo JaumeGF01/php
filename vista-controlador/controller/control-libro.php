@@ -19,10 +19,10 @@ class libroControl{
             $sinopsis = $_POST['sinopsis'];
             $created_at = $_POST['created_at'];
             $this->libromodelo->save($title, $sinopsis, $created_at);
-            header("Location: ../index.php");
+            header("Location: index.php");
         }
         else{
-            require "view/crear.php";
+            require "view/create.php";
         }
     }
 
@@ -32,17 +32,17 @@ class libroControl{
             $sinopsis = $_POST['sinopsis'];
             $created_at = $_POST['created_at'];
             $this->libromodelo->update($id, $title, $sinopsis);
-            header("Location: ../index.php");
+            header("Location: index.php");
         }
         else{
             $libro = $this->libromodelo->getById($id);
-            require "view/editar.php";
+            require "view/edit.php";
         }
     }
 
     public function delete($id){
         $this->libromodelo->delete($id);
-        header("Location: ../index.php");
+        header("Location: index.php");
     }
 }
 ?>

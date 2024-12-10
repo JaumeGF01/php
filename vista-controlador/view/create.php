@@ -1,7 +1,7 @@
 <h1>Agregar libros</h1>
     <form action="index.php?action=create" method="POST">
-        <label for="titulo">Titulo:</label>
-        <input type="text" name="titulo" required>
+        <label for="title">Titulo:</label>
+        <input type="text" name="title" required>
         <br>
         <label for="sinopsis">Sinopsis:</label>
         <input type="text" name="sinopsis" required>

@@ -10,7 +10,7 @@
         {
             $this->pdo="";
             $this->host="localhost";  
-            $this->nombreDB="libros";
+            $this->nombreDB="restaurant3";
             $this->user="root";
             $this->password="";
         }

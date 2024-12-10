@@ -1,11 +1,11 @@
 <?php
     $host = 'localhost';
-    $dbname = 'usuarios';
+    $dbname = 'tfg';
     $user = 'root';
-    $password = '';
+    $passwd = '';
 
     try{
-        $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+        $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $passwd);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e){

@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usu = $_POST['usuario'];
     $password = $_POST['password'];
 
-    if (!empty($usu) && !empty($pass)) {
+    if (!empty($usu) && !empty($password)) {
         $sql = "INSERT INTO usuarios (usuario, password) VALUES (:usuario, :password)";
         $sentencia = $conexion->prepare($sql);
         $isOk = $sentencia->execute([
